@@ -77,10 +77,13 @@
     <Compile Include="Assets\Script\NewPlayerMovement.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
+    <Compile Include="Assets\TAZO_3D_C\DemoScene\Action_Manage.cs" />
+    <Compile Include="Assets\TAZO_3D_C\DemoScene\demo.cs" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\Legacy\CelShader.shader" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShaderLighting.cginc" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
     <None Include="Assets\JSLizards\Iguana\Readme.txt" />
+    <None Include="Assets\TAZO_3D_C\BOSS\Bull\Shader\Cartoon.shader" />
     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

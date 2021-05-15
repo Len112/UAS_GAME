@@ -23,23 +23,23 @@ public class EnemyHealth : MonoBehaviour
        
         if (CurrentHealth <= 0)
         {
-            anim.SetBool("EnemyAttack", false);
-            anim.SetTrigger("Death");
+            anim.SetTrigger("Die");
             enemymove.enabled = false;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "sword")
+        if (other.gameObject.tag == "sword")
         {
             if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1))
             {
                 CurrentHealth -= 10;
                 healthBar.SetHealth(CurrentHealth);
-                anim.SetTrigger("Hit");
+                anim.SetTrigger("Damage");
             }
 
         }
     }
+    
 }

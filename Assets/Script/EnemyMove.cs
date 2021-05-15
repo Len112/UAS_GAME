@@ -28,6 +28,7 @@ public class EnemyMove : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
+
     }
     // Update is called once per frame
     void Update()
@@ -42,11 +43,7 @@ public class EnemyMove : MonoBehaviour
             if (playerInsightRange && playerInAttackRange) attackplayer();
         }
 
-        if (enemyhealth.CurrentHealth <= 0)
-        {
-            anim.SetBool("EnemyAttack", false);
-            anim.SetTrigger("Death");
-        }
+       
         
     }
 
@@ -58,7 +55,7 @@ public class EnemyMove : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
-            anim.SetBool("WalkTrigger", true);
+            anim.SetBool("Walk", true);
         }
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -72,7 +69,7 @@ public class EnemyMove : MonoBehaviour
     {
         float randomZ = Random.Range(-walkPointRange,walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        walkPoint = new Vector3(transform.position.x+randomX, transform.position.y, transform.position.z + randomZ);
 
         if (Physics.Raycast(walkPoint,-transform.up,2f,WhatisGround))
         {
@@ -83,7 +80,7 @@ public class EnemyMove : MonoBehaviour
     {
         agent.SetDestination(player.position);
         transform.LookAt(player);
-        anim.SetBool("WalkTrigger", true);
+        anim.SetBool("Walk", true);
     }
 
     public void attackplayer()
@@ -92,10 +89,10 @@ public class EnemyMove : MonoBehaviour
 
         transform.LookAt(player);
 
-        anim.SetBool("WalkTrigger", false);
+        anim.SetBool("Walk", false);
         if (!Alreadyattacked)
         {
-            anim.SetBool("EnemyAttack",true);
+            anim.SetTrigger("Attack");
             Alreadyattacked = true;
             Invoke(nameof(ResetAttack), timebetweenAttack);
         }
@@ -105,7 +102,6 @@ public class EnemyMove : MonoBehaviour
     private void ResetAttack()
     {
         Alreadyattacked = false;
-        anim.SetBool("EnemyAttack", false);
     }
 
    
