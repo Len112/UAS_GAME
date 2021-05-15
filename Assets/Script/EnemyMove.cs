@@ -23,12 +23,14 @@ public class EnemyMove : MonoBehaviour
     public PlayerHealth playerhealth;
     public EnemyHealth enemyhealth;
 
+    AudioSource roar;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-
+        roar = GetComponentInChildren<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -36,20 +38,25 @@ public class EnemyMove : MonoBehaviour
         playerInsightRange = Physics.CheckSphere(transform.position,sightRange,WhatisPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, WhatisPlayer);
 
-        if (playerhealth.CurrentHealth>0 || enemyhealth.CurrentHealth>0)
+        if (enemyhealth.CurrentHealth>0)
+        {
+            if (!playerInsightRange && !playerInAttackRange) patrolling();
+            if (playerInsightRange && !playerInAttackRange) chaseplayer();
+            if (playerInsightRange && playerInAttackRange) attackplayer();
+        } 
+        
+        else if (playerhealth.CurrentHealth > 0)
         {
             if (!playerInsightRange && !playerInAttackRange) patrolling();
             if (playerInsightRange && !playerInAttackRange) chaseplayer();
             if (playerInsightRange && playerInAttackRange) attackplayer();
         }
-
-       
         
     }
 
     public void patrolling()
     {
-        //anim.SetBool("WalkTrigger", true);
+
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -78,23 +85,38 @@ public class EnemyMove : MonoBehaviour
     }
     public void chaseplayer()
     {
+        anim.SetBool("Walk", true);
+        roar.Play();
         agent.SetDestination(player.position);
         transform.LookAt(player);
-        anim.SetBool("Walk", true);
     }
 
     public void attackplayer()
     {
-        agent.SetDestination(transform.position);
-
-        transform.LookAt(player);
-
-        anim.SetBool("Walk", false);
-        if (!Alreadyattacked)
+        if (enemyhealth.CurrentHealth <= 0)
         {
-            anim.SetTrigger("Attack");
-            Alreadyattacked = true;
-            Invoke(nameof(ResetAttack), timebetweenAttack);
+            anim.SetTrigger("Die");
+            roar.Stop();
+        }
+        else
+        {
+            agent.SetDestination(transform.position);
+
+            transform.LookAt(player);
+
+            anim.SetBool("Walk", false);
+            if (playerhealth.CurrentHealth <= 0)
+            {
+                Alreadyattacked = true;
+              
+            }
+            if (!Alreadyattacked)
+            {
+                anim.SetTrigger("Attack");
+                roar.Play();
+                Alreadyattacked = true;
+                Invoke(nameof(ResetAttack), timebetweenAttack);
+            }
         }
 
     }

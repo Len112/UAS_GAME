@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\JSLizards\Iguana\Scripts\IguanaCameraScript.cs" />
     <Compile Include="Assets\JSLizards\Iguana\Scripts\IguanaCharacter.cs" />
     <Compile Include="Assets\JSLizards\Iguana\Scripts\IguanaUserController.cs" />
@@ -71,16 +72,20 @@
     <Compile Include="Assets\Script\Cameracontroller.cs" />
     <Compile Include="Assets\Script\EnemyHealth.cs" />
     <Compile Include="Assets\Script\EnemyMove.cs" />
+    <Compile Include="Assets\Script\GemScore.cs" />
     <Compile Include="Assets\Script\HealthBarEnemyScript.cs" />
     <Compile Include="Assets\Script\HealthBarScript.cs" />
+    <Compile Include="Assets\Script\NewPlayerAudio.cs" />
     <Compile Include="Assets\Script\NewPlayerLook.cs" />
     <Compile Include="Assets\Script\NewPlayerMovement.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
+    <Compile Include="Assets\Script\ScoreSystem.cs" />
     <Compile Include="Assets\TAZO_3D_C\DemoScene\Action_Manage.cs" />
     <Compile Include="Assets\TAZO_3D_C\DemoScene\demo.cs" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\Legacy\CelShader.shader" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShaderLighting.cginc" />
+    <None Include="Assets\AurynSky\Gems Ultimate Pack\READ ME.txt" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
     <None Include="Assets\JSLizards\Iguana\Readme.txt" />
     <None Include="Assets\TAZO_3D_C\BOSS\Bull\Shader\Cartoon.shader" />

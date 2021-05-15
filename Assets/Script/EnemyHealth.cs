@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
     public HealthBarEnemyScript healthBar;
     public EnemyMove enemymove;
     Animator anim;
+
+    public AudioSource roar;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +27,18 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
             enemymove.enabled = false;
+            roar.Stop();
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "sword")
+       
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "sword")
         {
             if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1))
             {
@@ -41,5 +49,5 @@ public class EnemyHealth : MonoBehaviour
 
         }
     }
-    
+
 }

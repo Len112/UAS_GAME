@@ -16,8 +16,12 @@ public class NewPlayerMovement : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
 
-    private Vector3 movePos;
+    public AudioSource walkaudio;
+    public AudioSource walkaudio2;
+    public AudioSource runaudio;
+    public AudioSource swordaudio;
 
+    private Vector3 movePos;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +37,13 @@ public class NewPlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             StartCoroutine(Attack());
+            swordaudio.Play();
 
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             StartCoroutine(Attack2());
+            swordaudio.Play();
 
         }
 
@@ -85,6 +91,9 @@ public class NewPlayerMovement : MonoBehaviour
     private void Idle()
     {
         anim.SetFloat("speed", 0, 0.1f, Time.deltaTime);
+        walkaudio.Stop();
+        runaudio.Stop();
+        walkaudio2.Stop();
     }
     private void Jump()
     {
