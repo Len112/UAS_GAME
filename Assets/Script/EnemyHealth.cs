@@ -6,8 +6,14 @@ public class EnemyHealth : MonoBehaviour
 {
     public int MaxHealth = 100;
     public int CurrentHealth;
+    public int damage;
+
     public HealthBarEnemyScript healthBar;
+
     public EnemyMove enemymove;
+
+    public GameObject WinCanvas;
+
     Animator anim;
 
     public AudioSource roar;
@@ -18,6 +24,7 @@ public class EnemyHealth : MonoBehaviour
         healthBar.SetHealth(CurrentHealth);
         healthBar.SetMaxHealth(MaxHealth);
         anim = GetComponentInChildren<Animator>();
+
     }
 
     // Update is called once per frame
@@ -29,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
             anim.SetTrigger("Die");
             enemymove.enabled = false;
             roar.Stop();
+            StartCoroutine(Win());
         }
     }
 
@@ -43,12 +51,19 @@ public class EnemyHealth : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                CurrentHealth -= 10;
+                CurrentHealth -= damage;
                 healthBar.SetHealth(CurrentHealth);
                 anim.SetTrigger("Damage");
             }
 
         }
+    }
+
+    public IEnumerator Win()
+    {
+        yield return new WaitForSeconds(4f);
+        WinCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 
 }

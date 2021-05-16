@@ -37,13 +37,10 @@ public class NewPlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             StartCoroutine(Attack());
-            swordaudio.Play();
-
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             StartCoroutine(Defend());
-            //swordaudio.Play();
         }
 
     }
