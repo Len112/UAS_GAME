@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         CurrentHealth = MaxHealth;
+        healthBar.SetHealth(CurrentHealth);
         healthBar.SetMaxHealth(MaxHealth);
         anim = GetComponentInChildren<Animator>();
     }
@@ -40,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "sword")
         {
-            if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1))
+            if (Input.GetKey(KeyCode.Mouse0))
             {
                 CurrentHealth -= 10;
                 healthBar.SetHealth(CurrentHealth);

@@ -8,6 +8,7 @@ public class ScoreSystem : MonoBehaviour
     public static ScoreSystem  sScoresystem;
     public int playerScore = 0;
     public Text scoreText;
+    public AudioSource scoreSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +25,6 @@ public class ScoreSystem : MonoBehaviour
     {
         playerScore += increase;
         scoreText.text = "SCORE : " + playerScore.ToString();
+        scoreSound.Play();
     }
 }

@@ -83,8 +83,11 @@
     <Compile Include="Assets\Script\ScoreSystem.cs" />
     <Compile Include="Assets\TAZO_3D_C\DemoScene\Action_Manage.cs" />
     <Compile Include="Assets\TAZO_3D_C\DemoScene\demo.cs" />
+    <Compile Include="Assets\UI Buttons\Scripts\Controller.cs" />
+    <Compile Include="Assets\UIManager.cs" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\Legacy\CelShader.shader" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShaderLighting.cginc" />
+    <None Include="Assets\UI Buttons\Documentation\Readme.txt" />
     <None Include="Assets\AurynSky\Gems Ultimate Pack\READ ME.txt" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
     <None Include="Assets\JSLizards\Iguana\Readme.txt" />

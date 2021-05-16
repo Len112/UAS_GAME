@@ -42,9 +42,8 @@ public class NewPlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            StartCoroutine(Attack2());
-            swordaudio.Play();
-
+            StartCoroutine(Defend());
+            //swordaudio.Play();
         }
 
     }
@@ -116,11 +115,10 @@ public class NewPlayerMovement : MonoBehaviour
     {
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 1);
         anim.SetTrigger("attack");
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.6f);
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 0);
-
-
     }
+
     private IEnumerator Attack2()
     {
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 1);
@@ -129,5 +127,13 @@ public class NewPlayerMovement : MonoBehaviour
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 0);
 
 
+    }
+
+    private IEnumerator Defend()
+    {
+        anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 1);
+        anim.SetTrigger("defend");
+        yield return new WaitForSeconds(1f);
+        anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 0);
     }
 }

@@ -8,10 +8,12 @@ public class PlayerHealth : MonoBehaviour
     public int CurrentHealth;
     public HealthBarScript healthBar;
     Animator anim;
+    public AudioSource getHitAudio;
     // Start is called before the first frame update
     void Start()
     {
         CurrentHealth = MaxHealth;
+        healthBar.SetHealth(CurrentHealth);
         healthBar.SetMaxHealth(MaxHealth);
         anim = GetComponentInChildren<Animator>();
     }
@@ -30,19 +32,21 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag=="Enemy")
         {
-            CurrentHealth -= 2;
-            healthBar.SetHealth(CurrentHealth);
-            StartCoroutine(GetHit());
+            if (!Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                CurrentHealth -= 2;
+                healthBar.SetHealth(CurrentHealth);
+                StartCoroutine(GetHit());
+            }
         }
     }
 
     private IEnumerator GetHit()
     {
+        getHitAudio.Play();
         anim.SetLayerWeight(anim.GetLayerIndex("Hit_Layer"), 1);
         anim.SetTrigger("gethit");
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.5f);
         anim.SetLayerWeight(anim.GetLayerIndex("Hit_Layer"), 0);
-
-
     }
 }
