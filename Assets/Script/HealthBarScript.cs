@@ -9,10 +9,22 @@ public class HealthBarScript : MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public Text TextHealth;
+    public Text TextPlayer;
 
+    void Start()
+    {
+        if (PlayerPrefs.HasKey("PlayerName"))
+        {
+            TextPlayer.text = PlayerPrefs.GetString("PlayerName");
+            Debug.Log(PlayerPrefs.GetString("PlayerName"));
+        }
+        else
+        {
+            TextPlayer.text = "Player";
+        }
+    }
     public void SetMaxHealth(int health)
     {
-        slider.value = health;
         slider.maxValue = health;
         fill.color = gradient.Evaluate(1f);
     }

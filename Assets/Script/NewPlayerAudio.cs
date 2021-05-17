@@ -22,7 +22,7 @@ public class NewPlayerAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerhealth.CurrentHealth > 0 && enemyhealth.CurrentHealth > 0)
+        if (Time.timeScale!=0)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
             {

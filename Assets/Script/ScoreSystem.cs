@@ -13,6 +13,11 @@ public class ScoreSystem : MonoBehaviour
     void Start()
     {
         sScoresystem = this;
+        if (PlayerPrefs.HasKey("ScoreSave"))
+        {
+            playerScore = PlayerPrefs.GetInt("ScoreSave");
+        }
+        scoreText.text = "SCORE : " + playerScore.ToString();
     }
 
     // Update is called once per frame

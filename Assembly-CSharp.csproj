@@ -65,13 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
-    <Compile Include="Assets\JSLizards\Iguana\Scripts\IguanaCameraScript.cs" />
-    <Compile Include="Assets\JSLizards\Iguana\Scripts\IguanaCharacter.cs" />
-    <Compile Include="Assets\JSLizards\Iguana\Scripts\IguanaUserController.cs" />
+    <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\Script\Bilboard.cs" />
     <Compile Include="Assets\Script\Cameracontroller.cs" />
     <Compile Include="Assets\Script\EnemyHealth.cs" />
     <Compile Include="Assets\Script\EnemyMove.cs" />
+    <Compile Include="Assets\Script\GameData.cs" />
     <Compile Include="Assets\Script\GemScore.cs" />
     <Compile Include="Assets\Script\HealthBarEnemyScript.cs" />
     <Compile Include="Assets\Script\HealthBarScript.cs" />
@@ -80,6 +79,7 @@
     <Compile Include="Assets\Script\NewPlayerMovement.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
+    <Compile Include="Assets\Script\SaveSystem.cs" />
     <Compile Include="Assets\Script\Scenemanager.cs" />
     <Compile Include="Assets\Script\ScoreSystem.cs" />
     <Compile Include="Assets\TAZO_3D_C\DemoScene\Action_Manage.cs" />
@@ -90,7 +90,6 @@
     <None Include="Assets\UI Buttons\Documentation\Readme.txt" />
     <None Include="Assets\AurynSky\Gems Ultimate Pack\READ ME.txt" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
-    <None Include="Assets\JSLizards\Iguana\Readme.txt" />
     <None Include="Assets\TAZO_3D_C\BOSS\Bull\Shader\Cartoon.shader" />
     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
     <Reference Include="UnityEngine">
@@ -630,6 +629,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Ellen Fighting!!!!/Game/Praktek/UAS_GAME/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/Ellen Fighting!!!!/Game/Praktek/UAS_GAME/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/Ellen Fighting!!!!/Game/Praktek/UAS_GAME/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -647,6 +649,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Ellen Fighting!!!!/Game/Praktek/UAS_GAME/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/Ellen Fighting!!!!/Game/Praktek/UAS_GAME/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Ellen Fighting!!!!/Game/Praktek/UAS_GAME/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

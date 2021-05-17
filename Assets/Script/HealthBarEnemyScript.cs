@@ -12,7 +12,6 @@ public class HealthBarEnemyScript : MonoBehaviour
 
     public void SetMaxHealth(int health)
     {
-        slider.value = health;
         slider.maxValue = health;
         fill.color = gradient.Evaluate(1f);
     }

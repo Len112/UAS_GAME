@@ -19,8 +19,15 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentHealth = MaxHealth;
-        healthBar.SetHealth(CurrentHealth);
+        if (PlayerPrefs.HasKey("HealthSave"))
+        {
+            CurrentHealth = PlayerPrefs.GetInt("HealthSave");
+            healthBar.SetHealth(CurrentHealth);
+        }
+        else {
+            CurrentHealth = MaxHealth;
+            healthBar.SetHealth(CurrentHealth);
+        }
         healthBar.SetMaxHealth(MaxHealth);
         anim = GetComponentInChildren<Animator>();
     }
@@ -34,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
             anim.SetTrigger("die");
             GameOverCanvas.SetActive(true);
             StartCoroutine(GameOver());
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     private void OnCollisionEnter(Collision collision)

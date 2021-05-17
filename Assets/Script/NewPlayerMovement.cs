@@ -8,6 +8,7 @@ public class NewPlayerMovement : MonoBehaviour
     private Animator anim;
 
     public LayerMask layerMask;
+
     public bool Grounded;
   
     public float jumpForce =5;
@@ -22,11 +23,22 @@ public class NewPlayerMovement : MonoBehaviour
     public AudioSource swordaudio;
 
     private Vector3 movePos;
+
+    public GameObject PauseCanvas;
+
+    public NewPlayerLook Mouse;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        if (PlayerPrefs.HasKey("PosX") && PlayerPrefs.HasKey("PosY") && PlayerPrefs.HasKey("PosZ"))
+        {
+            float posx = PlayerPrefs.GetFloat("PosX");
+            float posy = PlayerPrefs.GetFloat("PosY");
+            float posz = PlayerPrefs.GetFloat("PosZ");
+            transform.position = new Vector3(posx, posy, posz);
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +53,13 @@ public class NewPlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             StartCoroutine(Defend());
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PauseCanvas.SetActive(true);
+            Time.timeScale = 0;
+            Mouse.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
         }
 
     }

@@ -20,8 +20,16 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentHealth = MaxHealth;
-        healthBar.SetHealth(CurrentHealth);
+        if (PlayerPrefs.HasKey("HealthEnemySave"))
+        {
+            CurrentHealth = PlayerPrefs.GetInt("HealthEnemySave");
+            healthBar.SetHealth(CurrentHealth);
+        }
+        else
+        {
+            CurrentHealth = MaxHealth;
+            healthBar.SetHealth(CurrentHealth);
+        }
         healthBar.SetMaxHealth(MaxHealth);
         anim = GetComponentInChildren<Animator>();
 
@@ -35,6 +43,7 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
             enemymove.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
             roar.Stop();
             StartCoroutine(Win());
         }
