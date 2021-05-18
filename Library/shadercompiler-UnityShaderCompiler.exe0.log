@@ -1,2 +1,9 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.19f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.19f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=14614 outsize=8429 ok=1
+Cmd: preprocess
+  insize=814 outsize=957 ok=1
+Cmd: preprocess
+  error: 2 plat 4 at (47): variable 'c' used without having been completely initialized
+  insize=3731 outsize=5454 ok=0

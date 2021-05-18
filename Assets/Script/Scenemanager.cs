@@ -12,8 +12,8 @@ public class Scenemanager : MonoBehaviour
     }
     public void MenuUtama()
     {
-        SceneManager.LoadScene("MenuUtama");
         Time.timeScale = 1;
+        SceneManager.LoadScene("MenuUtama");
     }
     public void Level1()
     {
@@ -37,5 +37,11 @@ public class Scenemanager : MonoBehaviour
     {
         SceneManager.LoadScene(PlayerPrefs.GetString("CurrentLevel"));
         Time.timeScale = 1;
+        Debug.Log(PlayerPrefs.GetString("CurrentLevel"));
+    }
+
+    IEnumerator MenuLoad()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 }

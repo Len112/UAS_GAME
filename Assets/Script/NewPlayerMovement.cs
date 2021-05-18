@@ -32,12 +32,13 @@ public class NewPlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-        if (PlayerPrefs.HasKey("PosX") && PlayerPrefs.HasKey("PosY") && PlayerPrefs.HasKey("PosZ"))
+        if (PlayerPrefs.HasKey("PosX") && PlayerPrefs.HasKey("PosY") && PlayerPrefs.HasKey("PosZ")&& PlayerPrefs.HasKey("RotY"))
         {
             float posx = PlayerPrefs.GetFloat("PosX");
             float posy = PlayerPrefs.GetFloat("PosY");
             float posz = PlayerPrefs.GetFloat("PosZ");
             transform.position = new Vector3(posx, posy, posz);
+            transform.rotation = Quaternion.Euler(0, PlayerPrefs.GetFloat("RotY"),0);
         }
     }
 
@@ -149,7 +150,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 1);
         anim.SetTrigger("defend");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 0);
     }
 }
