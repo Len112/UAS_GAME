@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+    <Compile Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\Environment\Scripts\Move.cs" />
+    <Compile Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\Environment\Scripts\PointLight.cs" />
     <Compile Include="Assets\MainMenu.cs" />
     <Compile Include="Assets\Script\Bilboard.cs" />
     <Compile Include="Assets\Script\Cameracontroller.cs" />
@@ -90,8 +92,10 @@
     <None Include="Assets\UI Buttons\Documentation\Readme.txt" />
     <None Include="Assets\AurynSky\Gems Ultimate Pack\READ ME.txt" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
+    <None Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\READ ME FIRST!!!\character setup guide link.txt" />
     <None Include="Assets\TAZO_3D_C\BOSS\Bull\Shader\Cartoon.shader" />
     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
+    <None Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\READ ME FIRST!!!\read me.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
