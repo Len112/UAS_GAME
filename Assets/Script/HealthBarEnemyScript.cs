@@ -12,13 +12,13 @@ public class HealthBarEnemyScript : MonoBehaviour
 
     public void SetMaxHealth(int health)
     {
-        slider.maxValue = health;
         fill.color = gradient.Evaluate(1f);
+        slider.maxValue = health;
     }
     public void SetHealth(int health)
     {
+        TextHealth.text = health.ToString();
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        TextHealth.text = health.ToString();
     }
 }

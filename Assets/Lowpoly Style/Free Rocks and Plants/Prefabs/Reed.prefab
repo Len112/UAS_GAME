@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 464626}
   - component: {fileID: 3309150}
   - component: {fileID: 2338510}
+  - component: {fileID: 6602174894634282291}
   m_Layer: 0
   m_Name: Reed
   m_TagString: Untagged
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6602174894634282291
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9897738, y: 2.1553748, z: 0.84}
+  m_Center: {x: 0, y: 1.0683409, z: 0}

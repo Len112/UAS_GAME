@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
                 CurrentHealth -= hit;
                 healthBar.SetHealth(CurrentHealth);
                 StartCoroutine(GetHit());
-            }
+            } 
         }
     }
 

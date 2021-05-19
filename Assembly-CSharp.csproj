@@ -76,6 +76,7 @@
     <Compile Include="Assets\Script\GemScore.cs" />
     <Compile Include="Assets\Script\HealthBarEnemyScript.cs" />
     <Compile Include="Assets\Script\HealthBarScript.cs" />
+    <Compile Include="Assets\Script\MenuUtama.cs" />
     <Compile Include="Assets\Script\NewPlayerAudio.cs" />
     <Compile Include="Assets\Script\NewPlayerLook.cs" />
     <Compile Include="Assets\Script\NewPlayerMovement.cs" />
@@ -94,6 +95,7 @@
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
     <None Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\READ ME FIRST!!!\character setup guide link.txt" />
     <None Include="Assets\TAZO_3D_C\BOSS\Bull\Shader\Cartoon.shader" />
+    <None Include="Assets\BrokenVector\FreeLowPolyPack\readme.txt" />
     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
     <None Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\READ ME FIRST!!!\read me.txt" />
     <Reference Include="UnityEngine">

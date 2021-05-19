@@ -562,8 +562,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.3, z: 0.84}
-  m_Center: {x: 0, y: 0.7, z: 0}
+  m_Size: {x: 1, y: 1.3, z: 0.72}
+  m_Center: {x: 0, y: 0.65, z: 0}
 --- !u!114 &7408398569762261143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
   jumpForce: 5
   moveSpeed: 0
   walkSpeed: 3
-  runSpeed: 5
+  runSpeed: 7
   walkaudio: {fileID: 7408398569909851508}
   walkaudio2: {fileID: 7408398568801427730}
   runaudio: {fileID: 7408398569335242124}

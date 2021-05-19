@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int MaxHealth = 100;
+    public int MaxHealth;
     public int CurrentHealth;
     public int damage;
 
@@ -20,6 +20,8 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBar.SetMaxHealth(MaxHealth);
+        anim = GetComponentInChildren<Animator>();
         if (PlayerPrefs.HasKey("HealthEnemySave"))
         {
             CurrentHealth = PlayerPrefs.GetInt("HealthEnemySave");
@@ -30,9 +32,6 @@ public class EnemyHealth : MonoBehaviour
             CurrentHealth = MaxHealth;
             healthBar.SetHealth(CurrentHealth);
         }
-        healthBar.SetMaxHealth(MaxHealth);
-        anim = GetComponentInChildren<Animator>();
-
     }
 
     // Update is called once per frame
@@ -70,7 +69,7 @@ public class EnemyHealth : MonoBehaviour
 
     public IEnumerator Win()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         WinCanvas.SetActive(true);
         Time.timeScale = 0;
     }

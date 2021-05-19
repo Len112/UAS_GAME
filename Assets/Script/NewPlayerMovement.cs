@@ -101,7 +101,12 @@ public class NewPlayerMovement : MonoBehaviour
         }
        
         Vector3 newmovePos = new Vector3(movePos.x * moveSpeed, rb.velocity.y, movePos.z * moveSpeed);
-        rb.velocity = newmovePos;
+        rb.MovePosition(transform.position + newmovePos*Time.deltaTime);
+
+        if (transform.position.y < -3f)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+        }
     }
 
     private void Idle()

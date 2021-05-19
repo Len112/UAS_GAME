@@ -17,7 +17,8 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-       
+        sceneName = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("CurrentLevel", sceneName);
     }
     public void SavePlayer()
     {
@@ -48,6 +49,28 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.DeleteKey("HealthEnemySave");
     }
 
+    public void restart2()
+    {
+        PlayerPrefs.DeleteKey("PosX");
+        PlayerPrefs.DeleteKey("PosY");
+        PlayerPrefs.DeleteKey("PosZ");
+        PlayerPrefs.DeleteKey("RotY");
+        PlayerPrefs.DeleteKey("HealthSave");
+        PlayerPrefs.SetInt("ScoreSave", PlayerPrefs.GetInt("ScoreSavefrom1"));
+        PlayerPrefs.DeleteKey("HealthEnemySave");
+    }
+
+    public void restart3()
+    {
+        PlayerPrefs.DeleteKey("PosX");
+        PlayerPrefs.DeleteKey("PosY");
+        PlayerPrefs.DeleteKey("PosZ");
+        PlayerPrefs.DeleteKey("RotY");
+        PlayerPrefs.DeleteKey("HealthSave");
+        PlayerPrefs.SetInt("ScoreSave", PlayerPrefs.GetInt("ScoreSavefrom2"));
+        PlayerPrefs.DeleteKey("HealthEnemySave");
+    }
+
     public void DeleteSave()
     {
         PlayerPrefs.DeleteAll();
@@ -55,19 +78,27 @@ public class SaveSystem : MonoBehaviour
 
     public void NextLevel2()
     {
+        PlayerPrefs.SetInt("ScoreSave", scoregame.playerScore);
+        PlayerPrefs.SetInt("ScoreSavefrom1", PlayerPrefs.GetInt("ScoreSave"));
         PlayerPrefs.DeleteKey("PosX");
         PlayerPrefs.DeleteKey("PosY");
         PlayerPrefs.DeleteKey("PosZ");
         PlayerPrefs.DeleteKey("RotY");
+        PlayerPrefs.DeleteKey("HealthSave");
+        PlayerPrefs.DeleteKey("HealthEnemySave");
         PlayerPrefs.SetString("CurrentLevel", "Level 2");
     }
 
     public void NextLevel3()
     {
+        PlayerPrefs.SetInt("ScoreSave", scoregame.playerScore);
+        PlayerPrefs.SetInt("ScoreSavefrom2", PlayerPrefs.GetInt("ScoreSave"));
         PlayerPrefs.DeleteKey("PosX");
         PlayerPrefs.DeleteKey("PosY");
         PlayerPrefs.DeleteKey("PosZ");
         PlayerPrefs.DeleteKey("RotY");
+        PlayerPrefs.DeleteKey("HealthSave");
+        PlayerPrefs.DeleteKey("HealthEnemySave");
         PlayerPrefs.SetString("CurrentLevel", "Level 3");
     }
 }
