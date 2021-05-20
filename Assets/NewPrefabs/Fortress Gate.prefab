@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 8516305026156952994}
   - component: {fileID: 8516305026153532148}
   - component: {fileID: 8516305026154959476}
+  - component: {fileID: 1405004572}
   m_Layer: 0
   m_Name: Fortress_Gate
   m_TagString: Untagged
@@ -530,6 +531,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1405004572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516305026156690790}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.456974, y: 9.924103, z: 18.555065}
+  m_Center: {x: 0.000019550323, y: 0, z: 0.00000047683704}
 --- !u!1 &8516305026156706202
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,9 +568,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8516305026156706202}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -336.7, y: 0, z: 120.33}
-  m_LocalScale: {x: 1, y: 0.76835, z: 0.67951}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8516305026156952994}
   - {fileID: 8516305026156983132}

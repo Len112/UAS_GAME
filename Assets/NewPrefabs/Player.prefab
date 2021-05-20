@@ -600,8 +600,8 @@ MonoBehaviour:
   Grounded: 0
   jumpForce: 5
   moveSpeed: 0
-  walkSpeed: 3
-  runSpeed: 7
+  walkSpeed: 4
+  runSpeed: 10
   walkaudio: {fileID: 7408398569909851508}
   walkaudio2: {fileID: 7408398568801427730}
   runaudio: {fileID: 7408398569335242124}
@@ -897,6 +897,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &656129225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818325621283000991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.59, z: 0.52}
+  m_Center: {x: 0, y: 0.03, z: -0.03}
 --- !u!54 &7408398568143886887
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -926,6 +939,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 1, z: 0.1}
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!65 &552715870
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818325621283001153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.3, z: 1}
+  m_Center: {x: 0, y: 0.66, z: 0}
 --- !u!1001 &3680524509247921210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1473,9 +1499,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7408398568009181271}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8818325621283000991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2066896392038628040, guid: 45288819fde2143449a96207b14db0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7408398568009181271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8818325621282901793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2066896392038131574, guid: 45288819fde2143449a96207b14db0bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 7408398568009181271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8818325621283001153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2066896392038628118, guid: 45288819fde2143449a96207b14db0bb,
     type: 3}
   m_PrefabInstance: {fileID: 7408398568009181271}
   m_PrefabAsset: {fileID: 0}
