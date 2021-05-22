@@ -2,22 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Scenemanager : MonoBehaviour
 {
 
     public NewPlayerLook mouse;
+
+    public GameObject loadingScreen;
+    public Slider loadingslider;
+
     private void Start()
     {
     }
     public void MenuUtama()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MenuUtama");
+        StartCoroutine(Loadscene("MenuUtama"));
+    }
+    public void LoginScene()
+    {
+        Time.timeScale = 1;
+        StartCoroutine(Loadscene("LoginScene"));
     }
     public void Level1()
     {
-        SceneManager.LoadScene("Level 1");
+        StartCoroutine(Loadscene("Level 1"));
         Time.timeScale = 1;
     }
 
@@ -35,13 +45,24 @@ public class Scenemanager : MonoBehaviour
 
    public void currentLevel()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetString("CurrentLevel"));
+        StartCoroutine(Loadscene(PlayerPrefs.GetString("CurrentLevel")));
         Time.timeScale = 1;
         Debug.Log(PlayerPrefs.GetString("CurrentLevel"));
     }
 
-    IEnumerator MenuLoad()
+    IEnumerator Loadscene(string scenename)
     {
-        yield return new WaitForSeconds(0.5f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(scenename);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            loadingslider.value = progress;
+
+            yield return null;
+        }
+
     }
 }

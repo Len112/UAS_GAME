@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -13,62 +14,110 @@ public class SaveSystem : MonoBehaviour
 
     string sceneName;
 
-    public InputField playername;
 
+    public Database Newdatabaseclass;
     private void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;
-        PlayerPrefs.SetString("CurrentLevel", sceneName);
     }
     public void SavePlayer()
     {
-        PlayerPrefs.SetFloat("PosX", playerPosition.transform.position.x);
-        PlayerPrefs.SetFloat("PosY", playerPosition.transform.position.y);
-        PlayerPrefs.SetFloat("PosZ", playerPosition.transform.position.z);
-        PlayerPrefs.SetFloat("RotY", playerPosition.transform.rotation.y);
-        PlayerPrefs.SetInt("HealthSave", healthplayer.CurrentHealth);
-        PlayerPrefs.SetInt("ScoreSave", scoregame.playerScore);
-        PlayerPrefs.SetInt("HealthEnemySave", healthenemy.CurrentHealth);
-        sceneName = SceneManager.GetActiveScene().name;
-        PlayerPrefs.SetString("CurrentLevel", sceneName);
+        string playerusername = PlayerPrefs.GetString("PlayerUsername");
+        Debug.Log(playerusername);
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playerusername)
+            {
+                Newdatabaseclass.database[i].PosX = playerPosition.transform.position.x;
+                Newdatabaseclass.database[i].PosY = playerPosition.transform.position.y;
+                Newdatabaseclass.database[i].PosZ = playerPosition.transform.position.z;
+                Newdatabaseclass.database[i].RotY = playerPosition.transform.position.y;
+                Newdatabaseclass.database[i].HealthPlayer = healthplayer.CurrentHealth;
+                Newdatabaseclass.database[i].ScorePlayer = scoregame.playerScore;
+                Newdatabaseclass.database[i].HealthEnemy = healthenemy.CurrentHealth;
+                Newdatabaseclass.database[i].CurrentScene = sceneName;
+                Newdatabaseclass.database[i].Saved = 1;
+            }
+        }
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
     }
 
-    public void SavePlayerName()
-    {
-        PlayerPrefs.SetString("PlayerName",playername.text);
-        Debug.Log(PlayerPrefs.GetString("PlayerName"));
-    }
+   
     public void restart()
     {
-        PlayerPrefs.DeleteKey("PosX");
-        PlayerPrefs.DeleteKey("PosY");
-        PlayerPrefs.DeleteKey("PosZ");
-        PlayerPrefs.DeleteKey("RotY");
-        PlayerPrefs.DeleteKey("HealthSave");
-        PlayerPrefs.DeleteKey("ScoreSave");
-        PlayerPrefs.DeleteKey("HealthEnemySave");
+        string playername = PlayerPrefs.GetString("PlayerUsername");
+        Debug.Log(playername);
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playername)
+            {
+                Newdatabaseclass.database[i].PosX = 0;
+                Newdatabaseclass.database[i].PosY = 0;
+                Newdatabaseclass.database[i].PosZ = 0;
+                Newdatabaseclass.database[i].RotY = 0;
+                Newdatabaseclass.database[i].HealthPlayer = 0;
+                Newdatabaseclass.database[i].ScorePlayer = 0;
+                Newdatabaseclass.database[i].HealthEnemy = 0;
+                Newdatabaseclass.database[i].CurrentScene = sceneName;
+            }
+        }
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
     }
 
     public void restart2()
     {
-        PlayerPrefs.DeleteKey("PosX");
-        PlayerPrefs.DeleteKey("PosY");
-        PlayerPrefs.DeleteKey("PosZ");
-        PlayerPrefs.DeleteKey("RotY");
-        PlayerPrefs.DeleteKey("HealthSave");
-        PlayerPrefs.SetInt("ScoreSave", PlayerPrefs.GetInt("ScoreSavefrom1"));
-        PlayerPrefs.DeleteKey("HealthEnemySave");
+        string playername = PlayerPrefs.GetString("PlayerUsername");
+        Debug.Log(playername);
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playername)
+            {
+                Newdatabaseclass.database[i].PosX = 0;
+                Newdatabaseclass.database[i].PosY = 0;
+                Newdatabaseclass.database[i].PosZ = 0;
+                Newdatabaseclass.database[i].RotY = 0;
+                Newdatabaseclass.database[i].HealthPlayer = 0;
+                Newdatabaseclass.database[i].ScorePlayer = PlayerPrefs.GetInt("ScoreSavefrom1");
+                Newdatabaseclass.database[i].HealthEnemy = 0;
+            }
+        }
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
     }
 
     public void restart3()
     {
-        PlayerPrefs.DeleteKey("PosX");
-        PlayerPrefs.DeleteKey("PosY");
-        PlayerPrefs.DeleteKey("PosZ");
-        PlayerPrefs.DeleteKey("RotY");
-        PlayerPrefs.DeleteKey("HealthSave");
-        PlayerPrefs.SetInt("ScoreSave", PlayerPrefs.GetInt("ScoreSavefrom2"));
-        PlayerPrefs.DeleteKey("HealthEnemySave");
+        string playername = PlayerPrefs.GetString("PlayerUsername");
+        Debug.Log(playername);
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playername)
+            {
+                Newdatabaseclass.database[i].PosX = 0;
+                Newdatabaseclass.database[i].PosY = 0;
+                Newdatabaseclass.database[i].PosZ = 0;
+                Newdatabaseclass.database[i].RotY = 0;
+                Newdatabaseclass.database[i].HealthPlayer = 0;
+                Newdatabaseclass.database[i].ScorePlayer = PlayerPrefs.GetInt("ScoreSavefrom2");
+                Newdatabaseclass.database[i].HealthEnemy = 0;
+            }
+        }
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
     }
 
     public void DeleteSave()
@@ -78,27 +127,55 @@ public class SaveSystem : MonoBehaviour
 
     public void NextLevel2()
     {
-        PlayerPrefs.SetInt("ScoreSave", scoregame.playerScore);
-        PlayerPrefs.SetInt("ScoreSavefrom1", PlayerPrefs.GetInt("ScoreSave"));
-        PlayerPrefs.DeleteKey("PosX");
-        PlayerPrefs.DeleteKey("PosY");
-        PlayerPrefs.DeleteKey("PosZ");
-        PlayerPrefs.DeleteKey("RotY");
-        PlayerPrefs.DeleteKey("HealthSave");
-        PlayerPrefs.DeleteKey("HealthEnemySave");
+        PlayerPrefs.SetInt("ScoreSavefrom1", scoregame.playerScore);
+        string playername = PlayerPrefs.GetString("PlayerUsername");
+        Debug.Log(playername);
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playername)
+            {
+                Newdatabaseclass.database[i].PosX = 0;
+                Newdatabaseclass.database[i].PosY = 0;
+                Newdatabaseclass.database[i].PosZ = 0;
+                Newdatabaseclass.database[i].RotY = 0;
+                Newdatabaseclass.database[i].HealthPlayer = 0;
+                Newdatabaseclass.database[i].ScorePlayer = scoregame.playerScore;
+                Newdatabaseclass.database[i].HealthEnemy = 0;
+                Newdatabaseclass.database[i].CurrentScene = "Level 2";
+            }
+        }
         PlayerPrefs.SetString("CurrentLevel", "Level 2");
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
     }
 
     public void NextLevel3()
     {
-        PlayerPrefs.SetInt("ScoreSave", scoregame.playerScore);
-        PlayerPrefs.SetInt("ScoreSavefrom2", PlayerPrefs.GetInt("ScoreSave"));
-        PlayerPrefs.DeleteKey("PosX");
-        PlayerPrefs.DeleteKey("PosY");
-        PlayerPrefs.DeleteKey("PosZ");
-        PlayerPrefs.DeleteKey("RotY");
-        PlayerPrefs.DeleteKey("HealthSave");
-        PlayerPrefs.DeleteKey("HealthEnemySave");
+        PlayerPrefs.SetInt("ScoreSavefrom2", scoregame.playerScore);
+        string playername = PlayerPrefs.GetString("PlayerUsername");
+        Debug.Log(playername);
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playername)
+            {
+                Newdatabaseclass.database[i].PosX = 0;
+                Newdatabaseclass.database[i].PosY = 0;
+                Newdatabaseclass.database[i].PosZ = 0;
+                Newdatabaseclass.database[i].RotY = 0;
+                Newdatabaseclass.database[i].HealthPlayer = 0;
+                Newdatabaseclass.database[i].ScorePlayer = scoregame.playerScore;
+                Newdatabaseclass.database[i].HealthEnemy = 0;
+                Newdatabaseclass.database[i].CurrentScene = "Level 3";
+            }
+        }
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
         PlayerPrefs.SetString("CurrentLevel", "Level 3");
     }
 }

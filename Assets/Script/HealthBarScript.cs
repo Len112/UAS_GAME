@@ -13,15 +13,7 @@ public class HealthBarScript : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("PlayerName"))
-        {
-            TextPlayer.text = PlayerPrefs.GetString("PlayerName");
-            Debug.Log(PlayerPrefs.GetString("PlayerName"));
-        }
-        else
-        {
-            TextPlayer.text = "Player";
-        }
+       
     }
     public void SetMaxHealth(int health)
     {
@@ -32,7 +24,14 @@ public class HealthBarScript : MonoBehaviour
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        TextHealth.text = health.ToString();
+        if (health < 0)
+        {
+            TextHealth.text = "0";
+        }
+        else
+        {
+            TextHealth.text = health.ToString();
+        }
     }
 
    

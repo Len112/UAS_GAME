@@ -17,7 +17,14 @@ public class HealthBarEnemyScript : MonoBehaviour
     }
     public void SetHealth(int health)
     {
-        TextHealth.text = health.ToString();
+        if (health < 0)
+        {
+            TextHealth.text = "0";
+        }
+        else
+        {
+            TextHealth.text = health.ToString();
+        }
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }

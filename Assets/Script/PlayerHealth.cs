@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.HasKey("HealthSave"))
+        if (PlayerPrefs.GetInt("HealthSave")!=0)
         {
             CurrentHealth = PlayerPrefs.GetInt("HealthSave");
             healthBar.SetHealth(CurrentHealth);

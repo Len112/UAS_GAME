@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!PlayerPrefs.HasKey("CurrentLevel"))
+        if (PlayerPrefs.GetInt("Saved")==0)
         {
             cont.interactable = false;
         }

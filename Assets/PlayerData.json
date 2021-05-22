@@ -1,0 +1,56 @@
+{
+    "database": [
+        {
+            "UserName": "ellen",
+            "Password": "12345",
+            "CurrentScene": "Level 3",
+            "ScorePlayer": 90,
+            "HealthPlayer": 0,
+            "HealthEnemy": 0,
+            "Saved": 1,
+            "PosX": 0.0,
+            "PosY": 0.0,
+            "PosZ": 0.0,
+            "RotY": 0.0
+        },
+        {
+            "UserName": "Renee",
+            "Password": "12345",
+            "CurrentScene": "Level 1",
+            "ScorePlayer": 5,
+            "HealthPlayer": 100,
+            "HealthEnemy": 100,
+            "Saved": 1,
+            "PosX": 9.779890060424805,
+            "PosY": -0.000020741772459587082,
+            "PosZ": 12.245049476623536,
+            "RotY": -0.000020741772459587082
+        },
+        {
+            "UserName": "hana",
+            "Password": "12345",
+            "CurrentScene": "Level 1",
+            "ScorePlayer": 0,
+            "HealthPlayer": 0,
+            "HealthEnemy": 0,
+            "Saved": 0,
+            "PosX": 0.0,
+            "PosY": 0.0,
+            "PosZ": 0.0,
+            "RotY": 0.0
+        },
+        {
+            "UserName": "nina",
+            "Password": "12345",
+            "CurrentScene": "Level 1",
+            "ScorePlayer": 20,
+            "HealthPlayer": 100,
+            "HealthEnemy": 100,
+            "Saved": 1,
+            "PosX": 25.936656951904298,
+            "PosY": -0.000006276660769799491,
+            "PosZ": 20.366777420043947,
+            "RotY": -0.000006276660769799491
+        }
+    ]
+}

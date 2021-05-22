@@ -32,7 +32,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
-        if (PlayerPrefs.HasKey("PosX") && PlayerPrefs.HasKey("PosY") && PlayerPrefs.HasKey("PosZ")&& PlayerPrefs.HasKey("RotY"))
+        if (PlayerPrefs.GetFloat("PosX")!= 0 && PlayerPrefs.GetFloat("PosY") != 0 && PlayerPrefs.GetFloat("PosZ") != 0 && PlayerPrefs.GetFloat("RotY")!=0)
         {
             float posx = PlayerPrefs.GetFloat("PosX");
             float posy = PlayerPrefs.GetFloat("PosY");
@@ -43,7 +43,7 @@ public class NewPlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         move();
 
@@ -101,7 +101,7 @@ public class NewPlayerMovement : MonoBehaviour
         }
        
         Vector3 newmovePos = new Vector3(movePos.x * moveSpeed, rb.velocity.y, movePos.z * moveSpeed);
-        rb.MovePosition(transform.position + newmovePos*Time.deltaTime);
+        rb.velocity=newmovePos;
 
         if (transform.position.y < -3f)
         {
@@ -136,8 +136,8 @@ public class NewPlayerMovement : MonoBehaviour
     private IEnumerator Attack()
     {
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 1);
-        anim.SetTrigger("attack");
-        yield return new WaitForSeconds(0.6f);
+        anim.SetTrigger("attack2");
+        yield return new WaitForSeconds(0.5f);
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 0);
     }
 

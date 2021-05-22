@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     {
         healthBar.SetMaxHealth(MaxHealth);
         anim = GetComponentInChildren<Animator>();
-        if (PlayerPrefs.HasKey("HealthEnemySave"))
+        if (PlayerPrefs.GetInt("HealthEnemySave")!=0)
         {
             CurrentHealth = PlayerPrefs.GetInt("HealthEnemySave");
             healthBar.SetHealth(CurrentHealth);
