@@ -145,11 +145,13 @@ public class SaveSystem : MonoBehaviour
                 Newdatabaseclass.database[i].ScorePlayer = scoregame.playerScore;
                 Newdatabaseclass.database[i].HealthEnemy = 0;
                 Newdatabaseclass.database[i].CurrentScene = "Level 2";
+                Newdatabaseclass.database[i].Saved = 1;
             }
         }
-        PlayerPrefs.SetString("CurrentLevel", "Level 2");
         string json = JsonUtility.ToJson(Newdatabaseclass, true);
         File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
+        Time.timeScale = 1;
+        PlayerPrefs.SetString("CurrentLevel", "Level 2");
     }
 
     public void NextLevel3()
@@ -172,10 +174,44 @@ public class SaveSystem : MonoBehaviour
                 Newdatabaseclass.database[i].ScorePlayer = scoregame.playerScore;
                 Newdatabaseclass.database[i].HealthEnemy = 0;
                 Newdatabaseclass.database[i].CurrentScene = "Level 3";
+                Newdatabaseclass.database[i].Saved = 1;
             }
         }
         string json = JsonUtility.ToJson(Newdatabaseclass, true);
         File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
         PlayerPrefs.SetString("CurrentLevel", "Level 3");
+        Time.timeScale = 1;
+    }
+
+    public void Win()
+    {
+        string playername = PlayerPrefs.GetString("PlayerUsername");
+        Debug.Log(playername);
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playername)
+            {
+                Newdatabaseclass.database[i].PosX = 0;
+                Newdatabaseclass.database[i].PosY = 0;
+                Newdatabaseclass.database[i].PosZ = 0;
+                Newdatabaseclass.database[i].RotY = 0;
+                Newdatabaseclass.database[i].HealthPlayer = 0;
+                Newdatabaseclass.database[i].ScorePlayer = scoregame.playerScore;
+                Newdatabaseclass.database[i].HealthEnemy = 0;
+                Newdatabaseclass.database[i].CurrentScene = "WinScene";
+                Newdatabaseclass.database[i].Saved = 1;
+                if (Newdatabaseclass.database[i].HighScorePlayer < scoregame.playerScore)
+                {
+                    Newdatabaseclass.database[i].HighScorePlayer = scoregame.playerScore;
+                }
+            }
+        }
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
+        PlayerPrefs.SetString("CurrentLevel", "WinScene");
+        Time.timeScale = 1;
     }
 }

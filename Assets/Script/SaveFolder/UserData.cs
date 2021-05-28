@@ -10,6 +10,7 @@ public class UserData
     public string CurrentScene;
 
     public int ScorePlayer;
+    public int HighScorePlayer;
     public int HealthPlayer;
     public int HealthEnemy;
     public int Saved;

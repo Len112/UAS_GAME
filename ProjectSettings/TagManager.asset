@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - sword
-  - IguanaClaw
   - Enemy
+  - PotionHealth
+  - BottleHealth
   layers:
   - Default
   - TransparentFX

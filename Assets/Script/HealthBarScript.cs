@@ -27,6 +27,9 @@ public class HealthBarScript : MonoBehaviour
         if (health < 0)
         {
             TextHealth.text = "0";
+        }else if(health > 100)
+        {
+            TextHealth.text = "100";
         }
         else
         {

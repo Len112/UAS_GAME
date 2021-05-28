@@ -32,6 +32,7 @@ public class LoadDataFromJson : MonoBehaviour
                 PlayerPrefs.SetInt("HealthEnemySave", Newdatabaseclass.database[i].HealthEnemy);
                 PlayerPrefs.SetString("CurrentLevel", Newdatabaseclass.database[i].CurrentScene);
                 PlayerPrefs.SetInt("Saved", Newdatabaseclass.database[i].Saved);
+                PlayerPrefs.SetInt("HighScore", Newdatabaseclass.database[i].HighScorePlayer);
             }
         }
         Debug.Log(PlayerPrefs.GetString("CurrentLevel"));

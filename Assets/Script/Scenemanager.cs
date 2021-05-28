@@ -12,6 +12,8 @@ public class Scenemanager : MonoBehaviour
     public GameObject loadingScreen;
     public Slider loadingslider;
 
+    public AudioSource ambiencesound;
+
     private void Start()
     {
     }
@@ -31,6 +33,11 @@ public class Scenemanager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Startscene()
+    {
+        StartCoroutine(Loadscene("StartScene"));
+        Time.timeScale = 1;
+    }
     public void Exit()
     {
         Application.Quit();
@@ -41,6 +48,7 @@ public class Scenemanager : MonoBehaviour
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         mouse.enabled = true;
+        ambiencesound.Play();
     }
 
    public void currentLevel()
@@ -49,7 +57,7 @@ public class Scenemanager : MonoBehaviour
         Time.timeScale = 1;
         Debug.Log(PlayerPrefs.GetString("CurrentLevel"));
     }
-
+   
     IEnumerator Loadscene(string scenename)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(scenename);

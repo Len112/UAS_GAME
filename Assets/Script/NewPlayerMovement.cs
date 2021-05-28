@@ -21,6 +21,7 @@ public class NewPlayerMovement : MonoBehaviour
     public AudioSource walkaudio2;
     public AudioSource runaudio;
     public AudioSource swordaudio;
+    public AudioSource ambiencesound;
 
     private Vector3 movePos;
 
@@ -32,6 +33,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        Time.timeScale = 1;
         if (PlayerPrefs.GetFloat("PosX")!= 0 && PlayerPrefs.GetFloat("PosY") != 0 && PlayerPrefs.GetFloat("PosZ") != 0 && PlayerPrefs.GetFloat("RotY")!=0)
         {
             float posx = PlayerPrefs.GetFloat("PosX");
@@ -59,6 +61,7 @@ public class NewPlayerMovement : MonoBehaviour
         {
             PauseCanvas.SetActive(true);
             Time.timeScale = 0;
+            ambiencesound.Pause();
             Mouse.enabled = false;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -136,7 +139,7 @@ public class NewPlayerMovement : MonoBehaviour
     private IEnumerator Attack()
     {
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 1);
-        anim.SetTrigger("attack2");
+        anim.SetTrigger("attack");
         yield return new WaitForSeconds(0.5f);
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 0);
     }

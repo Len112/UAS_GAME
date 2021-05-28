@@ -42,7 +42,6 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Die");
             enemymove.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
             roar.Stop();
             StartCoroutine(Win());
         }
@@ -69,9 +68,10 @@ public class EnemyHealth : MonoBehaviour
 
     public IEnumerator Win()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         WinCanvas.SetActive(true);
         Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
     }
 
 }

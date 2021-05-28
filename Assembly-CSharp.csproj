@@ -67,8 +67,6 @@
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\Environment\Scripts\Move.cs" />
     <Compile Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\Environment\Scripts\PointLight.cs" />
-    <Compile Include="Assets\Mking\mScripts\MKdemoCtrl.cs" />
-    <Compile Include="Assets\SaveDataXmL.cs" />
     <Compile Include="Assets\Script\Dont use\Bilboard.cs" />
     <Compile Include="Assets\Script\Dont use\Cameracontroller.cs" />
     <Compile Include="Assets\Script\Dont use\GameData.cs" />
@@ -79,6 +77,8 @@
     <Compile Include="Assets\Script\GemScore.cs" />
     <Compile Include="Assets\Script\HealthBarEnemyScript.cs" />
     <Compile Include="Assets\Script\HealthBarScript.cs" />
+    <Compile Include="Assets\Script\Highscoreuser.cs" />
+    <Compile Include="Assets\Script\IncreaseHealth.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\NewPlayerAudio.cs" />
     <Compile Include="Assets\Script\NewPlayerLook.cs" />
@@ -91,21 +91,23 @@
     <Compile Include="Assets\Script\SaveSystem.cs" />
     <Compile Include="Assets\Script\Scenemanager.cs" />
     <Compile Include="Assets\Script\ScoreSystem.cs" />
-    <Compile Include="Assets\TAZO_3D_C\DemoScene\Action_Manage.cs" />
-    <Compile Include="Assets\TAZO_3D_C\DemoScene\demo.cs" />
+    <Compile Include="Assets\Script\Win.cs" />
     <Compile Include="Assets\UI Buttons\Scripts\Controller.cs" />
+    <None Include="Assets\PQAssets\Query-Chan-SD\Documents\ReadMe.txt" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\Legacy\CelShader.shader" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShaderLighting.cginc" />
     <None Include="Assets\UI Buttons\Documentation\Readme.txt" />
     <None Include="Assets\AurynSky\Gems Ultimate Pack\READ ME.txt" />
     <None Include="Assets\Mking\mLD3DShaders\LD3D_SpecularEmissive.shader" />
     <None Include="Assets\Supercyan Free Forest Sample\Shaders\SupercyanShader.shader" />
+    <None Include="Assets\PQAssets\Query-Chan-SD\license_en.txt" />
     <None Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\READ ME FIRST!!!\character setup guide link.txt" />
     <None Include="Assets\Mking\mLD3DShaders\LD3D_Specular.shader" />
     <None Include="Assets\TAZO_3D_C\BOSS\Bull\Shader\Cartoon.shader" />
     <None Include="Assets\BrokenVector\FreeLowPolyPack\readme.txt" />
     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
     <None Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\READ ME FIRST!!!\read me.txt" />
+    <None Include="Assets\PQAssets\Query-Chan-SD\license_jp.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

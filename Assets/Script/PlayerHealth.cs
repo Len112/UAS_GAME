@@ -35,7 +35,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
         if (CurrentHealth <=0)
         {
             anim.SetTrigger("die");

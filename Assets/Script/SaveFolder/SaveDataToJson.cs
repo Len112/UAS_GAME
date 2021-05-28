@@ -23,9 +23,29 @@ public class SaveDataToJson : MonoBehaviour
     public GameObject loadingScreen;
     public Slider loadingslider;
 
-    public void Update()
+    public void Start()
     {
-        
+        if (!File.Exists(Application.dataPath + "/PlayerData.json"))
+        {
+            Database data = new Database();
+            data.database.Add(new UserData
+            {
+                UserName = "Player",
+                Password = "12345",
+                ScorePlayer = 0,
+                HealthPlayer = 0,
+                HealthEnemy = 0,
+                PosX = 0,
+                PosY = 0,
+                PosZ = 0,
+                RotY = 0,
+                CurrentScene = "Level 1",
+                Saved = 0,
+                HighScorePlayer = 0
+            });
+            string json = JsonUtility.ToJson(data, true);
+            File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
+        }
     }
     public void SavetoJson()
     {
@@ -35,22 +55,56 @@ public class SaveDataToJson : MonoBehaviour
         }
         else
         {
-            string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
-            Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
-            _used = false;
-            for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+            if (File.Exists(Application.dataPath + "/PlayerData.json"))
             {
-                if (Newdatabaseclass.database[i].UserName == NewUserName.text)
+                string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+                Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+                _used = false;
+                for (int i = 0; i < Newdatabaseclass.database.Count; i++)
                 {
-                    Debug.Log(NewUserName.text);
-                    _used = true;
+                    if (Newdatabaseclass.database[i].UserName == NewUserName.text)
+                    {
+                        Debug.Log(NewUserName.text);
+                        _used = true;
+                        Debug.Log(_used);
+                    }
+                }
+
+                if (_used == false)
+                {
+                    Newdatabaseclass.database.Add(new UserData
+                    {
+                        UserName = NewUserName.text,
+                        Password = NewPassword.text,
+                        ScorePlayer = 0,
+                        HealthPlayer = 0,
+                        HealthEnemy = 0,
+                        PosX = 0,
+                        PosY = 0,
+                        PosZ = 0,
+                        RotY = 0,
+                        CurrentScene = "Level 1",
+                        Saved = 0,
+                        HighScorePlayer = 0
+                    });
+                    string json = JsonUtility.ToJson(Newdatabaseclass, true);
+                    File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
+                    messagetext.text = "Register Succefully, please Login";
+                    NewUserName.text = "";
+                    NewPassword.text = "";
+                    StartCoroutine(errortextnone());
+                }
+                else
+                {
                     Debug.Log(_used);
+                    messagetext.text = "Username already used";
+                    StartCoroutine(errortextnone());
                 }
             }
-
-            if (_used == false)
+            else
             {
-                Newdatabaseclass.database.Add(new UserData
+                Database data = new Database();
+                data.database.Add(new UserData
                 {
                     UserName = NewUserName.text,
                     Password = NewPassword.text,
@@ -62,20 +116,12 @@ public class SaveDataToJson : MonoBehaviour
                     PosZ = 0,
                     RotY = 0,
                     CurrentScene = "Level 1",
-                    Saved = 0
+                    Saved = 0,
+                    HighScorePlayer = 0
                 });
-                string json = JsonUtility.ToJson(Newdatabaseclass, true);
-                File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
-                messagetext.text = "Register Succefully, please Login";
-                NewUserName.text = "";
-                NewPassword.text = "";
-                StartCoroutine(errortextnone());
-            }
-            else
-            {
-                Debug.Log(_used);
-                messagetext.text = "Username already used";
-                StartCoroutine(errortextnone());
+                string json = JsonUtility.ToJson(data, true);
+                File.WriteAllText(Application.dataPath + "/PlayerData.json",json);
+
             }
         }
         
@@ -136,5 +182,31 @@ public class SaveDataToJson : MonoBehaviour
 
     }
 
+
+     public void newgame()
+    {
+        string playername = PlayerPrefs.GetString("PlayerUsername");
+        string jsonload = File.ReadAllText(Application.dataPath + "/PlayerData.json");
+        Newdatabaseclass = JsonUtility.FromJson<Database>(jsonload);
+
+        for (int i = 0; i < Newdatabaseclass.database.Count; i++)
+        {
+            if (Newdatabaseclass.database[i].UserName == playername)
+            {
+                Newdatabaseclass.database[i].PosX = 0;
+                Newdatabaseclass.database[i].PosY = 0;
+                Newdatabaseclass.database[i].PosZ = 0;
+                Newdatabaseclass.database[i].RotY = 0;
+                Newdatabaseclass.database[i].HealthPlayer = 0;
+                Newdatabaseclass.database[i].ScorePlayer = 0;
+                Newdatabaseclass.database[i].HealthEnemy = 0;
+                Newdatabaseclass.database[i].CurrentScene = "Level 1";
+                Newdatabaseclass.database[i].Saved = 0;
+
+            }
+        }
+        string json = JsonUtility.ToJson(Newdatabaseclass, true);
+        File.WriteAllText(Application.dataPath + "/PlayerData.json", json);
+    }
 
 }
