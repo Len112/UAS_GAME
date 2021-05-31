@@ -34,7 +34,7 @@ public class SaveSystem : MonoBehaviour
                 Newdatabaseclass.database[i].PosX = playerPosition.transform.position.x;
                 Newdatabaseclass.database[i].PosY = playerPosition.transform.position.y;
                 Newdatabaseclass.database[i].PosZ = playerPosition.transform.position.z;
-                Newdatabaseclass.database[i].RotY = playerPosition.transform.position.y;
+                Newdatabaseclass.database[i].RotY = playerPosition.transform.eulerAngles.y;
                 Newdatabaseclass.database[i].HealthPlayer = healthplayer.CurrentHealth;
                 Newdatabaseclass.database[i].ScorePlayer = scoregame.playerScore;
                 Newdatabaseclass.database[i].HealthEnemy = healthenemy.CurrentHealth;

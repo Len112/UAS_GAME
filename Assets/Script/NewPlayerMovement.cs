@@ -34,13 +34,14 @@ public class NewPlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         Time.timeScale = 1;
+
         if (PlayerPrefs.GetFloat("PosX")!= 0 && PlayerPrefs.GetFloat("PosY") != 0 && PlayerPrefs.GetFloat("PosZ") != 0 && PlayerPrefs.GetFloat("RotY")!=0)
         {
             float posx = PlayerPrefs.GetFloat("PosX");
             float posy = PlayerPrefs.GetFloat("PosY");
             float posz = PlayerPrefs.GetFloat("PosZ");
             transform.position = new Vector3(posx, posy, posz);
-            transform.rotation = Quaternion.Euler(0, PlayerPrefs.GetFloat("RotY"),0);
+            transform.rotation = Quaternion.Euler(0f, PlayerPrefs.GetFloat("RotY"), 0f);
         }
     }
 
@@ -48,7 +49,7 @@ public class NewPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         move();
-
+        transform.rotation = Quaternion.Euler(0f, PlayerPrefs.GetFloat("RotY"), 0f);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             StartCoroutine(Attack());

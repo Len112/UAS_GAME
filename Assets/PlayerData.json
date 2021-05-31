@@ -17,16 +17,16 @@
         {
             "UserName": "Ellen",
             "Password": "12345",
-            "CurrentScene": "WinScene",
-            "ScorePlayer": 185,
+            "CurrentScene": "Level 2",
+            "ScorePlayer": 65,
             "HighScorePlayer": 265,
-            "HealthPlayer": 0,
-            "HealthEnemy": 0,
+            "HealthPlayer": 100,
+            "HealthEnemy": 150,
             "Saved": 1,
-            "PosX": 0.0,
-            "PosY": 0.0,
-            "PosZ": 0.0,
-            "RotY": 0.0
+            "PosX": 50.67985916137695,
+            "PosY": -0.0000012247066933923634,
+            "PosZ": 4.019191741943359,
+            "RotY": 174.6999969482422
         }
     ]
 }
