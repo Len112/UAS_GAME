@@ -68,10 +68,11 @@ public class EnemyHealth : MonoBehaviour
 
     public IEnumerator Win()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         WinCanvas.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }

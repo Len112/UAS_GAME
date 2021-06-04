@@ -6,7 +6,7 @@ public class NewPlayerLook : MonoBehaviour
 {
     public Transform player;
 
-    public float MouseSensitivity = 10;
+    public float MouseSensitivity = 0f;
 
     private float x = 0;
 
@@ -19,6 +19,7 @@ public class NewPlayerLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

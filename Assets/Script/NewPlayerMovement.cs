@@ -49,7 +49,6 @@ public class NewPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         move();
-        transform.rotation = Quaternion.Euler(0f, PlayerPrefs.GetFloat("RotY"), 0f);
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             StartCoroutine(Attack());
@@ -65,6 +64,7 @@ public class NewPlayerMovement : MonoBehaviour
             ambiencesound.Pause();
             Mouse.enabled = false;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
     }
@@ -141,7 +141,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 1);
         anim.SetTrigger("attack");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.9f);
         anim.SetLayerWeight(anim.GetLayerIndex("Attack_Layer"), 0);
     }
 

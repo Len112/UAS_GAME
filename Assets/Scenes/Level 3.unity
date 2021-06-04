@@ -3945,7 +3945,7 @@ PrefabInstance:
     - target: {fileID: 7408398568173609535, guid: b0fb3200f5123c54ab59f8200a7aca19,
         type: 3}
       propertyPath: MouseSensitivity
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7408398569762261136, guid: b0fb3200f5123c54ab59f8200a7aca19,
         type: 3}
@@ -4056,6 +4056,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb3ddd5cb619e04abf9c7b60bde9042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &843230825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7408398569762261137, guid: b0fb3200f5123c54ab59f8200a7aca19,
+    type: 3}
+  m_PrefabInstance: {fileID: 843230823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &852980180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4713,17 +4719,22 @@ PrefabInstance:
     - target: {fileID: 776317959091030476, guid: 28678791786d0a0488a276555c8ade9d,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776317959091030476, guid: 28678791786d0a0488a276555c8ade9d,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776317959097443968, guid: 28678791786d0a0488a276555c8ade9d,
         type: 3}
       propertyPath: m_Name
       value: LoadingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 776317959097443968, guid: 28678791786d0a0488a276555c8ade9d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 776317959097443971, guid: 28678791786d0a0488a276555c8ade9d,
         type: 3}
@@ -4850,12 +4861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1067242965 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 776317959097443968, guid: 28678791786d0a0488a276555c8ade9d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1067242962}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1087277846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6286472749430626088, guid: 52091c00dfece8d4584c788f21ac4acf,
@@ -5876,32 +5881,32 @@ PrefabInstance:
     - target: {fileID: 3974339294317066977, guid: 64ba7af587164024790e69a75eb3e3a3,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3974339294317066977, guid: 64ba7af587164024790e69a75eb3e3a3,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3974339294317066977, guid: 64ba7af587164024790e69a75eb3e3a3,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3974339294317066977, guid: 64ba7af587164024790e69a75eb3e3a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.129
+      value: -0.127
       objectReference: {fileID: 0}
     - target: {fileID: 3974339294317066977, guid: 64ba7af587164024790e69a75eb3e3a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 3974339294317066977, guid: 64ba7af587164024790e69a75eb3e3a3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.213
+      value: -0.172
       objectReference: {fileID: 0}
     - target: {fileID: 3974339294334813548, guid: 64ba7af587164024790e69a75eb3e3a3,
         type: 3}
@@ -6572,7 +6577,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 843230823}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 843230825}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca0a5509acdf4ae439eee1b7bb7ead4a, type: 3}
@@ -6775,7 +6780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouse: {fileID: 843230824}
-  loadingScreen: {fileID: 1067242965}
+  loadingScreen: {fileID: 12131020}
   loadingslider: {fileID: 1067242964}
   ambiencesound: {fileID: 1288167665}
 --- !u!114 &1756518830
@@ -6790,7 +6795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97773d14bf60cf41bcc3674b5f685bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {fileID: 12131020}
+  playerPosition: {fileID: 843230825}
   healthplayer: {fileID: 1674834509}
   healthenemy: {fileID: 1026979776}
   scoregame: {fileID: 533877416}

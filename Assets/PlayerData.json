@@ -27,6 +27,48 @@
             "PosY": -0.0000012247066933923634,
             "PosZ": 4.019191741943359,
             "RotY": 174.6999969482422
+        },
+        {
+            "UserName": "New",
+            "Password": "12345",
+            "CurrentScene": "Level 2",
+            "ScorePlayer": 150,
+            "HighScorePlayer": 0,
+            "HealthPlayer": 100,
+            "HealthEnemy": 150,
+            "Saved": 1,
+            "PosX": 55.11308288574219,
+            "PosY": -0.00009119441529037431,
+            "PosZ": 81.94619750976563,
+            "RotY": 278.5500183105469
+        },
+        {
+            "UserName": "dinda",
+            "Password": "12345",
+            "CurrentScene": "WinScene",
+            "ScorePlayer": 185,
+            "HighScorePlayer": 185,
+            "HealthPlayer": 0,
+            "HealthEnemy": 0,
+            "Saved": 1,
+            "PosX": 0.0,
+            "PosY": 0.0,
+            "PosZ": 0.0,
+            "RotY": 0.0
+        },
+        {
+            "UserName": "Papoy",
+            "Password": "12345",
+            "CurrentScene": "WinScene",
+            "ScorePlayer": 105,
+            "HighScorePlayer": 105,
+            "HealthPlayer": 0,
+            "HealthEnemy": 0,
+            "Saved": 1,
+            "PosX": 0.0,
+            "PosY": 0.0,
+            "PosZ": 0.0,
+            "RotY": 0.0
         }
     ]
 }

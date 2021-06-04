@@ -86,7 +86,6 @@ public class EnemyMove : MonoBehaviour
     public void chaseplayer()
     {
         anim.SetBool("Walk", true);
-        roar.Play();
         agent.SetDestination(player.position);
         transform.LookAt(player);
     }

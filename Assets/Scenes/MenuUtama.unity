@@ -6486,8 +6486,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.998, y: 0}
-  m_SizeDelta: {x: 267.92148, y: 133.12842}
+  m_AnchoredPosition: {x: 0, y: -12}
+  m_SizeDelta: {x: 305.9526, y: 150.73834}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934813177
 MonoBehaviour:
@@ -6510,10 +6510,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 11
+    m_FontSize: 10
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 111
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -6523,7 +6523,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Bergerak\nGunakan tombol W A S D untuk menggerakkan karakter\n\nBerlari\nSaat
     bergerak, tahan Shift agar karakter bisa berlari\n\nLompat \ntekan space untuk
-    melompat \n\n"
+    melompat \n\nPause\ntekan P pada keyboard\n\n"
 --- !u!222 &1934813178
 CanvasRenderer:
   m_ObjectHideFlags: 0

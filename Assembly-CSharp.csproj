@@ -67,11 +67,6 @@
     <Compile Include="Assets\AurynSky\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
     <Compile Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\Environment\Scripts\Move.cs" />
     <Compile Include="Assets\LowPoly Fantasy Monsters Pack Ver1.0_Demo\Environment\Scripts\PointLight.cs" />
-    <Compile Include="Assets\Script\Dont use\Bilboard.cs" />
-    <Compile Include="Assets\Script\Dont use\Cameracontroller.cs" />
-    <Compile Include="Assets\Script\Dont use\GameData.cs" />
-    <Compile Include="Assets\Script\Dont use\MenuUtama.cs" />
-    <Compile Include="Assets\Script\Dont use\PlayerMovement.cs" />
     <Compile Include="Assets\Script\EnemyHealth.cs" />
     <Compile Include="Assets\Script\EnemyMove.cs" />
     <Compile Include="Assets\Script\GemScore.cs" />

@@ -45,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
             GameOverCanvas.SetActive(true);
             StartCoroutine(GameOver());
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -71,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
 
     public IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         Time.timeScale = 0;
     }
 }
